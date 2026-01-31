@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CampusConnect - Green/Eco Campus Theme
+   All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Forest green base palette */
+    --background: 120 20% 98%;
+    --foreground: 150 30% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 150 30% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 30% 15%;
+
+    /* Primary: Forest Green */
+    --primary: 142 50% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: Warm Earth Tone */
+    --secondary: 35 40% 92%;
+    --secondary-foreground: 150 30% 20%;
+
+    --muted: 120 15% 94%;
+    --muted-foreground: 150 15% 45%;
+
+    /* Accent: Sage Green */
+    --accent: 140 35% 88%;
+    --accent-foreground: 150 30% 20%;
+
+    /* Destructive: Emergency Red */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 140 20% 88%;
+    --input: 140 20% 88%;
+    --ring: 142 50% 35%;
+
+    --radius: 0.625rem;
+
+    /* Sidebar: Darker forest green */
+    --sidebar-background: 142 40% 25%;
+    --sidebar-foreground: 120 20% 95%;
+    --sidebar-primary: 120 30% 95%;
+    --sidebar-primary-foreground: 142 40% 20%;
+    --sidebar-accent: 142 35% 30%;
+    --sidebar-accent-foreground: 120 20% 95%;
+    --sidebar-border: 142 30% 35%;
+    --sidebar-ring: 142 50% 50%;
+
+    /* Custom tokens for CampusConnect */
+    --campus-success: 142 70% 45%;
+    --campus-warning: 38 92% 50%;
+    --campus-emergency: 0 85% 60%;
+  }
+
+  .dark {
+    --background: 150 25% 8%;
+    --foreground: 120 20% 95%;
+
+    --card: 150 20% 12%;
+    --card-foreground: 120 20% 95%;
+
+    --popover: 150 20% 12%;
+    --popover-foreground: 120 20% 95%;
+
+    --primary: 142 55% 45%;
+    --primary-foreground: 150 30% 10%;
+
+    --secondary: 150 20% 18%;
+    --secondary-foreground: 120 20% 90%;
+
+    --muted: 150 20% 18%;
+    --muted-foreground: 140 15% 60%;
+
+    --accent: 142 30% 22%;
+    --accent-foreground: 120 20% 95%;
+
+    --destructive: 0 65% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 150 20% 20%;
+    --input: 150 20% 20%;
+    --ring: 142 55% 45%;
+
+    --sidebar-background: 150 25% 6%;
+    --sidebar-foreground: 120 20% 95%;
+    --sidebar-primary: 142 55% 50%;
+    --sidebar-primary-foreground: 150 30% 10%;
+    --sidebar-accent: 150 20% 15%;
+    --sidebar-accent-foreground: 120 20% 95%;
+    --sidebar-border: 150 20% 18%;
+    --sidebar-ring: 142 55% 50%;
+
+    --campus-success: 142 70% 50%;
+    --campus-warning: 38 92% 55%;
+    --campus-emergency: 0 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Custom utility classes for CampusConnect */
+@layer utilities {
+  .campus-gradient {
+    background: linear-gradient(135deg, hsl(142 50% 35%) 0%, hsl(140 45% 45%) 100%);
+  }
+  
+  .campus-card-shadow {
+    box-shadow: 0 4px 20px -2px hsl(142 30% 20% / 0.1);
+  }
+  
+  .emergency-pulse {
+    animation: emergency-pulse 2s ease-in-out infinite;
+  }
+  
+  @keyframes emergency-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 hsl(0 85% 60% / 0.4); }
+    50% { box-shadow: 0 0 0 15px hsl(0 85% 60% / 0); }
+  }
+}
